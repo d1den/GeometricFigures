@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Figures</name>
+    </assembly>
+    <members>
+        <member name="T:Figures.IFigure">
+            <summary>
+            Geometric figure
+            </summary>
+        </member>
+        <member name="M:Figures.IFigure.GetArea">
+            <summary>
+            Get the area of a geometric figure
+            </summary>
+            <returns>Area</returns>
+        </member>
+        <member name="T:Figures.Round">
+            <summary>
+            Round - geometric figure
+            </summary>
+        </member>
+        <member name="P:Figures.Round.Radius">
+            <summary>
+            Get radius of round
+            </summary>
+        </member>
+        <member name="M:Figures.Round.#ctor(System.Double)">
+            <summary>
+            Create round object
+            </summary>
+            <param name="radius">Radius of round</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If radius is negative</exception>
+        </member>
+        <member name="M:Figures.Round.Equals(Figures.Round,System.Double)">
+            <summary>
+            Checking with some accuracy the equality
+            </summary>
+        </member>
+        <member name="T:Figures.Triangle">
+            <summary>
+            Triangle - geometric figure
+            </summary>
+        </member>
+        <member name="P:Figures.Triangle.A">
+            <summary>
+            1st side
+            </summary>
+        </member>
+        <member name="P:Figures.Triangle.B">
+            <summary>
+            2nd side
+            </summary>
+        </member>
+        <member name="P:Figures.Triangle.C">
+            <summary>
+            3d side
+            </summary>
+        </member>
+        <member name="P:Figures.Triangle.IsRightTriangle">
+            <summary>
+            Is a triangle right-angled?
+            </summary>
+        </member>
+        <member name="M:Figures.Triangle.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            Create triangle object
+            </summary>
+            <param name="a">1st side of triangle</param>
+            <param name="b">2nd side of triangle</param>
+            <param name="c">3d side of triangle</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If side is negative</exception>
+        </member>
+        <member name="M:Figures.Triangle.Equals(Figures.Triangle,System.Double)">
+            <summary>
+            Checking with some accuracy the equality
+            </summary>
+        </member>
+    </members>
+</doc>
