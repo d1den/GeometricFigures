@@ -37,6 +37,11 @@
             Checking with some accuracy the equality
             </summary>
         </member>
+        <member name="T:Figures.Triangle">
+            <summary>
+            Triangle - geometric figure
+            </summary>
+        </member>
         <member name="P:Figures.Triangle.A">
             <summary>
             1st side
