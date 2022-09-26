@@ -26,7 +26,7 @@ namespace Figures.Tests
         [Test]
         public void CreateInterfaceObject()
         {
-            IFigure triangle1 = new Triangle(4.5, 7, 3);
+            IGeometricFigure triangle1 = new Triangle(4.5, 7, 3);
             Assert.AreEqual(triangle1.GetType(), typeof(Triangle));
             Assert.AreEqual((triangle1 as Triangle).A, 4.5);
             Assert.AreEqual((triangle1 as Triangle).B, 7);
@@ -36,7 +36,7 @@ namespace Figures.Tests
         public void GetArea()
         {
             var triangle1 = new Triangle(3, 4, 5);
-            Assert.AreEqual(triangle1.GetArea(), 6);
+            Assert.AreEqual(triangle1.CalculateArea(), 6);
         }
         [Test]
         public void CloneTest()

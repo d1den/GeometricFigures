@@ -24,7 +24,7 @@ namespace Figures.Tests
         [Test]
         public void CreateInterfaceObject()
         {
-            IFigure round1 = new Round(4);
+            IGeometricFigure round1 = new Round(4);
             Assert.AreEqual(round1.GetType(), typeof(Round));
             Assert.AreEqual((round1 as Round).Radius, 4);
         }
@@ -32,13 +32,13 @@ namespace Figures.Tests
         public void GetArea()
         {
             var round1 = new Round(4);
-            Assert.AreEqual(round1.GetArea(), Math.PI * Math.Pow(4, 2));
+            Assert.AreEqual(round1.CalculateArea(), Math.PI * Math.Pow(4, 2));
         }
         [Test]
         public void GetAreaOfNullradius()
         {
             var round1 = new Round(0);
-            Assert.AreEqual(round1.GetArea(), 0.0);
+            Assert.AreEqual(round1.CalculateArea(), 0.0);
         }
         [Test]
         public void CloneTest()
