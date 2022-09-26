@@ -4,65 +4,156 @@
         <name>Figures</name>
     </assembly>
     <members>
-        <member name="T:Figures.IFigure">
+        <member name="T:Figures.Abstract.IGeometricFigure">
             <summary>
             Geometric figure
             </summary>
         </member>
-        <member name="M:Figures.IFigure.GetArea">
+        <member name="M:Figures.Abstract.IGeometricFigure.CalculateArea">
             <summary>
-            Get the area of a geometric figure
+            Calculate the area of a geometric figure
             </summary>
             <returns>Area</returns>
         </member>
-        <member name="T:Figures.Round">
+        <member name="M:Figures.Abstract.IGeometricFigure.DefaultInitialize">
+            <summary>
+            Default initialize figure
+            </summary>
+        </member>
+        <member name="T:Figures.Concrete.Round">
             <summary>
             Round - geometric figure
             </summary>
         </member>
-        <member name="P:Figures.Round.Radius">
+        <member name="F:Figures.Concrete.Round._DefaultAccuracy">
             <summary>
-            Get radius of round
+            Default accuracy
             </summary>
         </member>
-        <member name="M:Figures.Round.#ctor(System.Double)">
+        <member name="F:Figures.Concrete.Round._RoundToStringTemplate">
+            <summary>
+            To string template
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Round._DefaultRadius">
+            <summary>
+            Default radius
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Round._Radius">
+            <summary>
+            Radius of round
+            </summary>
+        </member>
+        <member name="P:Figures.Concrete.Round.Radius">
+            <summary>
+            Radius of round
+            </summary>
+        </member>
+        <member name="M:Figures.Concrete.Round.#ctor">
+            <summary>
+            Create round object
+            </summary>
+        </member>
+        <member name="M:Figures.Concrete.Round.#ctor(System.Double)">
             <summary>
             Create round object
             </summary>
             <param name="radius">Radius of round</param>
             <exception cref="T:System.ArgumentOutOfRangeException">If radius is negative</exception>
         </member>
-        <member name="M:Figures.Round.Equals(Figures.Round,System.Double)">
+        <member name="M:Figures.Concrete.Round.CalculateArea">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Round.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Round.Equals(Figures.Concrete.Round,System.Double)">
             <summary>
             Checking with some accuracy the equality
             </summary>
         </member>
-        <member name="T:Figures.Triangle">
+        <member name="M:Figures.Concrete.Round.Equals(Figures.Concrete.Round)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Round.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Round.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Round.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Round.DefaultInitialize">
+            <inheritdoc/>
+        </member>
+        <member name="T:Figures.Concrete.Triangle">
             <summary>
             Triangle - geometric figure
             </summary>
         </member>
-        <member name="P:Figures.Triangle.A">
+        <member name="F:Figures.Concrete.Triangle._A">
+            <summary>
+            Triangle sides
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Triangle._B">
+            <summary>
+            Triangle sides
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Triangle._C">
+            <summary>
+            Triangle sides
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Triangle._DefaultAccuracy">
+            <summary>
+            Default accuracy
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Triangle._DefaultA">
+            <summary>
+            Default sides
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Triangle._DefaultB">
+            <summary>
+            Default sides
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Triangle._DefaultC">
+            <summary>
+            Default sides
+            </summary>
+        </member>
+        <member name="F:Figures.Concrete.Triangle._TriangleToStringTemplate">
+            <summary>
+            To string template
+            </summary>
+        </member>
+        <member name="P:Figures.Concrete.Triangle.A">
             <summary>
             1st side
             </summary>
         </member>
-        <member name="P:Figures.Triangle.B">
+        <member name="P:Figures.Concrete.Triangle.B">
             <summary>
             2nd side
             </summary>
         </member>
-        <member name="P:Figures.Triangle.C">
+        <member name="P:Figures.Concrete.Triangle.C">
             <summary>
             3d side
             </summary>
         </member>
-        <member name="P:Figures.Triangle.IsRightTriangle">
+        <member name="M:Figures.Concrete.Triangle.#ctor">
             <summary>
-            Is a triangle right-angled?
+            Create triangle object
             </summary>
         </member>
-        <member name="M:Figures.Triangle.#ctor(System.Double,System.Double,System.Double)">
+        <member name="M:Figures.Concrete.Triangle.#ctor(System.Double,System.Double,System.Double)">
             <summary>
             Create triangle object
             </summary>
@@ -71,10 +162,46 @@
             <param name="c">3d side of triangle</param>
             <exception cref="T:System.ArgumentOutOfRangeException">If side is negative</exception>
         </member>
-        <member name="M:Figures.Triangle.Equals(Figures.Triangle,System.Double)">
+        <member name="M:Figures.Concrete.Triangle.CalculateArea">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.IsRightTriangle">
+            <summary>
+            Is a triangle right-angled?
+            </summary>
+            <returns>Result</returns>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.IsPythagoreanTheorem(System.Double,System.Double,System.Double)">
+            <summary>
+            Check Pythagorean Theorem
+            </summary>
+            <param name="hypotenuse">Hypotenuse</param>
+            <param name="cathetus1">Cathetus</param>
+            <param name="cathetus2">Cathetus</param>
+            <returns>Result</returns>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.Equals(Figures.Concrete.Triangle,System.Double)">
             <summary>
             Checking with some accuracy the equality
             </summary>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.Equals(Figures.Concrete.Triangle)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:Figures.Concrete.Triangle.DefaultInitialize">
+            <inheritdoc/>
         </member>
     </members>
 </doc>
