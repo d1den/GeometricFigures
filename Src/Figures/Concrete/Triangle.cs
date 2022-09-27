@@ -23,7 +23,7 @@ namespace Figures.Concrete
         /// <summary>
         /// Default sides
         /// </summary>
-        private const double _DefaultA = 10, _DefaultB = 10, _DefaultC = 16;
+        public const double DefaultA = 10, DefaultB = 10, DefaultC = 16;
 
         /// <summary>
         /// To string template
@@ -197,9 +197,9 @@ namespace Figures.Concrete
         /// <inheritdoc/>
         public void DefaultInitialize()
         {
-            A = _DefaultA;
-            B = _DefaultB;
-            C = _DefaultC;
+            A = DefaultA;
+            B = DefaultB;
+            C = DefaultC;
         }
     }
 }

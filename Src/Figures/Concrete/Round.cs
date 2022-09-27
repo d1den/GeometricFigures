@@ -22,7 +22,7 @@ namespace Figures.Concrete
         /// <summary>
         /// Default radius
         /// </summary>
-        private const double _DefaultRadius = 10;
+        public const double DefaultRadius = 10;
 
         /// <summary>
         /// Radius of round
@@ -129,7 +129,7 @@ namespace Figures.Concrete
         /// <inheritdoc/>
         public void DefaultInitialize()
         {
-            Radius = _DefaultRadius;
+            Radius = DefaultRadius;
         }
     }
 }
