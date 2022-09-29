@@ -18,9 +18,9 @@ namespace Figures.Factories.Concrete
         /// <inheritdoc/>
         public IGeometricFigure CreateFigure()
         {
-            var randomA = _Random.Next(0, (int)Triangle.DefaultA);
-            var randomB = _Random.Next(0, (int)Triangle.DefaultB);
-            var randomC = _Random.Next(0, (int)Triangle.DefaultC);
+            var randomA = _Random.Next(1, (int)Triangle.DefaultA);
+            var randomB = _Random.Next(1, (int)Triangle.DefaultB);
+            var randomC = _Random.Next(1, (int)Triangle.DefaultC);
 
             return new Triangle(randomA, randomB, randomC);
         }

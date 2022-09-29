@@ -35,7 +35,7 @@
             To string template
             </summary>
         </member>
-        <member name="F:Figures.Concrete.Round._DefaultRadius">
+        <member name="F:Figures.Concrete.Round.DefaultRadius">
             <summary>
             Default radius
             </summary>
@@ -113,17 +113,17 @@
             Default accuracy
             </summary>
         </member>
-        <member name="F:Figures.Concrete.Triangle._DefaultA">
+        <member name="F:Figures.Concrete.Triangle.DefaultA">
             <summary>
             Default sides
             </summary>
         </member>
-        <member name="F:Figures.Concrete.Triangle._DefaultB">
+        <member name="F:Figures.Concrete.Triangle.DefaultB">
             <summary>
             Default sides
             </summary>
         </member>
-        <member name="F:Figures.Concrete.Triangle._DefaultC">
+        <member name="F:Figures.Concrete.Triangle.DefaultC">
             <summary>
             Default sides
             </summary>
@@ -201,6 +201,143 @@
             <inheritdoc/>
         </member>
         <member name="M:Figures.Concrete.Triangle.DefaultInitialize">
+            <inheritdoc/>
+        </member>
+        <member name="T:Figures.Enums.FigureTypeValues">
+            <summary>
+            Types of figures
+            </summary>
+        </member>
+        <member name="F:Figures.Enums.FigureTypeValues.Round">
+            <summary>
+            Round
+            </summary>
+        </member>
+        <member name="F:Figures.Enums.FigureTypeValues.Triangle">
+            <summary>
+            Triangle
+            </summary>
+        </member>
+        <member name="T:Figures.Factories.Abstract.IGeometricFigureFactory">
+            <summary>
+            Geometric figure factory
+            </summary>
+        </member>
+        <member name="M:Figures.Factories.Abstract.IGeometricFigureFactory.CreateFigure">
+            <summary>
+            Create figure
+            </summary>
+            <returns>Geometric figure</returns>
+        </member>
+        <member name="T:Figures.Factories.Concrete.RoundRandomFactory">
+            <summary>
+            Random round factory
+            </summary>
+        </member>
+        <member name="F:Figures.Factories.Concrete.RoundRandomFactory._Random">
+            <summary>
+            Random object
+            </summary>
+        </member>
+        <member name="M:Figures.Factories.Concrete.RoundRandomFactory.CreateFigure">
+            <inheritdoc/>
+        </member>
+        <member name="T:Figures.Factories.Concrete.TriangleRandomFactory">
+            <summary>
+            Random triangle factory
+            </summary>
+        </member>
+        <member name="F:Figures.Factories.Concrete.TriangleRandomFactory._Random">
+            <summary>
+            Random object
+            </summary>
+        </member>
+        <member name="M:Figures.Factories.Concrete.TriangleRandomFactory.CreateFigure">
+            <inheritdoc/>
+        </member>
+        <member name="T:Figures.Services.Abstract.IFigureByAssemblyLoader">
+            <summary>
+            Service for load figures by assemly
+            </summary>
+        </member>
+        <member name="M:Figures.Services.Abstract.IFigureByAssemblyLoader.LoadFigures">
+            <summary>
+            Load figures
+            </summary>
+            <returns>List of figures</returns>
+        </member>
+        <member name="T:Figures.Services.Abstract.IFigureFactoryProvider">
+            <summary>
+            Figure factory provider
+            </summary>
+        </member>
+        <member name="M:Figures.Services.Abstract.IFigureFactoryProvider.GetFactory(Figures.Enums.FigureTypeValues)">
+            <summary>
+            Get factory
+            </summary>
+            <param name="figureType">Type of figure</param>
+            <returns>Factory</returns>
+        </member>
+        <member name="T:Figures.Services.Abstract.ITypesFromAssembliesLoader">
+            <summary>
+            Service for load types from dll assemblies
+            </summary>
+        </member>
+        <member name="M:Figures.Services.Abstract.ITypesFromAssembliesLoader.LoadTypes">
+            <summary>
+            Load types from assemblies in directory
+            </summary>
+            <returns>List of types</returns>
+        </member>
+        <member name="T:Figures.Services.Concrete.DefaultFigureByAssemblyLoader">
+            <summary>
+            Service for load one default instanse of every type in asseblies in directory
+            </summary>
+        </member>
+        <member name="F:Figures.Services.Concrete.DefaultFigureByAssemblyLoader._TypesFromAssembliesLoader">
+            <summary>
+            Directory path
+            </summary>
+        </member>
+        <member name="M:Figures.Services.Concrete.DefaultFigureByAssemblyLoader.#ctor(Figures.Services.Abstract.ITypesFromAssembliesLoader)">
+            <summary>
+            Class constructor
+            </summary>
+            <param name="typesFromAssembliesLoader">Service for load types from dll assemblies</param>
+        </member>
+        <member name="M:Figures.Services.Concrete.DefaultFigureByAssemblyLoader.LoadFigures">
+            <inheritdoc/>
+        </member>
+        <member name="T:Figures.Services.Concrete.FigureRandomFactoryProvider">
+            <summary>
+            Random figure factory provider
+            </summary>
+        </member>
+        <member name="M:Figures.Services.Concrete.FigureRandomFactoryProvider.GetFactory(Figures.Enums.FigureTypeValues)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Figures.Services.Concrete.TypesFromAssembliesLoader">
+            <summary>
+            Service for load types from dll assemblies
+            </summary>
+        </member>
+        <member name="F:Figures.Services.Concrete.TypesFromAssembliesLoader._DllFileNamePattern">
+            <summary>
+            File name pattern for .dll
+            </summary>
+        </member>
+        <member name="F:Figures.Services.Concrete.TypesFromAssembliesLoader._AssembliesDirectoryPath">
+            <summary>
+            Directory path
+            </summary>
+        </member>
+        <member name="M:Figures.Services.Concrete.TypesFromAssembliesLoader.#ctor(System.String)">
+            <summary>
+            Class constructor
+            </summary>
+            <param name="assembliesDirectoryPath">Directory path</param>
+        </member>
+        <member name="M:Figures.Services.Concrete.TypesFromAssembliesLoader.LoadTypes">
             <inheritdoc/>
         </member>
     </members>

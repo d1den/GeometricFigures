@@ -2,7 +2,6 @@
 using Figures.Services.Abstract;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -14,37 +13,25 @@ namespace Figures.Services.Concrete
     public class DefaultFigureByAssemblyLoader : IFigureByAssemblyLoader
     {
         /// <summary>
-        /// File name pattern for .dll
-        /// </summary>
-        private const string _DllFileNamePattern = "*.dll";
-
-        /// <summary>
         /// Directory path
         /// </summary>
-        private readonly string _AssembliesDirectoryPath;
+        private readonly ITypesFromAssembliesLoader _TypesFromAssembliesLoader;
 
         /// <summary>
         /// Class constructor
         /// </summary>
-        /// <param name="assembliesDirectoryPath">Directory path</param>
-        public DefaultFigureByAssemblyLoader(string assembliesDirectoryPath)
+        /// <param name="typesFromAssembliesLoader">Service for load types from dll assemblies</param>
+        public DefaultFigureByAssemblyLoader(ITypesFromAssembliesLoader typesFromAssembliesLoader)
         {
-            _AssembliesDirectoryPath = assembliesDirectoryPath 
-                ?? throw new ArgumentNullException(nameof(assembliesDirectoryPath));
+            _TypesFromAssembliesLoader = typesFromAssembliesLoader
+                ?? throw new ArgumentNullException(nameof(typesFromAssembliesLoader));
         }
 
         /// <inheritdoc/>
         public IList<IGeometricFigure> LoadFigures()
         {
-            var assemblyFiles = Directory.EnumerateFiles(_AssembliesDirectoryPath, _DllFileNamePattern);
-            var assemblies = assemblyFiles.Select(file => Assembly.Load(file));
-            var figureTypes = new List<Type>();
-            foreach(var assembly in assemblies)
-            {
-                var types = assembly.ExportedTypes.Where(type => type.IsClass 
+            var figureTypes = _TypesFromAssembliesLoader.LoadTypes().Where(type => type.IsClass
                     && typeof(IGeometricFigure).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo()));
-                figureTypes.AddRange(types);
-            }
 
             var defaultFigures = figureTypes.Select(type => Activator.CreateInstance(type) as IGeometricFigure).ToList();
             defaultFigures.ForEach(figure => figure?.DefaultInitialize());
