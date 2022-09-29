@@ -1,5 +1,5 @@
 USE TestDB;
-SELECT [Product].[Name] as 'Продукт', [Category].[Name] as 'Категория'
+SELECT [Product].[Name] as 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', [Category].[Name] as 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
 FROM [Product]
 LEFT JOIN [ProductAndCategory]
 ON [Product].[Id] = [ProductAndCategory].[Product_Id]
